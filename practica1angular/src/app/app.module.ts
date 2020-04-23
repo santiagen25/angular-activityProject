@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
@@ -11,6 +12,8 @@ import { CreateComponent } from './modules/crud/components/create/create.compone
 import { ReadComponent } from './modules/crud/components/read/read.component';
 import { UpdateComponent } from './modules/crud/components/update/update.component';
 import { DeleteComponent } from './modules/crud/components/delete/delete.component';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,9 @@ import { DeleteComponent } from './modules/crud/components/delete/delete.compone
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

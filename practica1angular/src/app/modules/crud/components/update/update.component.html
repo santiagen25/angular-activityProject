@@ -6,16 +6,20 @@
                     <form id="update-form" class="form" action="" method="post">
                         <h3 class="text-center text-info">Update Activity</h3>
                         <div class="form-group">
+                            <label for="id" class="text-info">ID:</label><br>
+                            <input type="text" readonly value="{{obj.id}}" name="id" id="id" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label for="name" class="text-info">Name:</label><br>
-                            <input type="text" name="name" id="name" class="form-control">
+                            <input type="text" value="{{obj.name}}" name="name" id="name" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="date" class="text-info">Date:</label><br>
-                            <input type="date" name="date" id="date" class="form-control">
+                            <input [(ngModel)]="obj.date" (change)="getPrediction()" type="date" name="date" id="date" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="prediction" class="text-info">Prediction:</label><br>
-                            <input type="text" readonly name="prediction" id="prediction" class="form-control">
+                            <input type="text" value="{{obj.prediction}}" readonly name="prediction" id="prediction" class="form-control">
                         </div>
                         <div class="form-group d-flex justify-content-center">
                             <input type="button" readonly name="create" value="Update" id="create_button" class="btn btn-primary col-md-4">
