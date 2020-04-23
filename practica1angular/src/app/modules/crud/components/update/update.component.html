@@ -1,1 +1,28 @@
-<p>update works!</p>
+<div id="update">
+    <div class="container">
+        <div id="update-row" class="row justify-content-center align-items-center">
+            <div id="update-column" class="col-md-6">
+                <div id="update-box" class="col-md-12">
+                    <form id="update-form" class="form" action="" method="post">
+                        <h3 class="text-center text-info">Update Activity</h3>
+                        <div class="form-group">
+                            <label for="name" class="text-info">Name:</label><br>
+                            <input type="text" name="name" id="name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="date" class="text-info">Date:</label><br>
+                            <input type="date" name="date" id="date" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="prediction" class="text-info">Prediction:</label><br>
+                            <input type="text" readonly name="prediction" id="prediction" class="form-control">
+                        </div>
+                        <div class="form-group d-flex justify-content-center">
+                            <input type="button" readonly name="create" value="Update" id="create_button" class="btn btn-primary col-md-4">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+#update .container #update-row #update-column #update-box {
+    margin-top: 120px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+}
+#update .container #update-row #update-column #update-box #update-form {
+    padding: 20px;
+}
+#update .container #update-row #update-column #update-box #update-form #register-link {
+    margin-top: -85px;
+}
