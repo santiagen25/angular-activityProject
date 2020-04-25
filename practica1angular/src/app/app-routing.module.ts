@@ -7,13 +7,14 @@ import { CreateComponent } from './modules/crud/components/create/create.compone
 import { ReadComponent } from './modules/crud/components/read/read.component';
 import { UpdateComponent } from './modules/crud/components/update/update.component';
 import { DeleteComponent } from './modules/crud/components/delete/delete.component';
+import { ConfirmGuard } from './core/guards/confirm/confirm.guard';
 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [LoginUsuarioGuard] },
   { path: 'create', component: CreateComponent, canActivate: [LoginUsuarioGuard] },
   { path: 'read', component: ReadComponent, canActivate: [LoginUsuarioGuard] },
-  { path: 'update', component: UpdateComponent, canActivate: [LoginUsuarioGuard] },
+  { path: 'update', component: UpdateComponent, canDeactivate: [ConfirmGuard] },
   { path: 'delete', component: DeleteComponent, canActivate: [LoginUsuarioGuard] },
   { path: '**', component: NotFoundComponent }
 ];
