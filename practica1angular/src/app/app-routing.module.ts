@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'create', component: CreateComponent, canActivate: [LoginUsuarioGuard] },
   { path: 'read', component: ReadComponent, canActivate: [LoginUsuarioGuard] },
   { path: 'update', component: UpdateComponent, canDeactivate: [ConfirmGuard] },
-  { path: 'delete', component: DeleteComponent, canActivate: [LoginUsuarioGuard] },
+  { path: 'delete', component: DeleteComponent, canDeactivate: [ConfirmGuard] },
   { path: '**', component: NotFoundComponent }
 ];
 

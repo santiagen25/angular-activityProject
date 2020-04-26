@@ -1,1 +1,41 @@
-<p>delete works!</p>
+<div id="delete">
+    <div class="container">
+        <div>
+            <div>
+                <input type="button" value="Go Back" (click)="goBack()" class="btn btn-primary mt-4">
+                <!-- <a class="nav-link h3" routerLink="/crud" [routerLinkActive]="'active'">back</a> -->
+            </div>
+            <div id="delete-row" class="row justify-content-center align-items-center">
+                <div id="delete-column" class="col-md-6">
+                    <div id="delete-box" class="col-md-12">
+                        <form id="delete-form" class="form" action="" method="post">
+                            <h3 class="text-center text-info">Delete Activity</h3>
+                            <div class="form-group">
+                                <label for="id" class="text-info">ID:</label><br>
+                                <input type="text" readonly value="{{obj.id}}" name="id" id="id" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="text-info">Name:</label><br>
+                                <input [(ngModel)]="obj.name" readonly type="text" value="{{obj.name}}" name="name" id="name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="date" class="text-info">Date:</label><br>
+                                <input [(ngModel)]="obj.date" readonly (change)="getPrediction()" type="date" name="date" id="date" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="prediction" class="text-info">Prediction:</label><br>
+                                <input type="text" value="{{obj.prediction}}" readonly name="prediction" id="prediction" class="form-control">
+                            </div>
+                            <div>
+                                <img src="{{obj.img}}" height="72" width="72">
+                            </div>
+                            <div class="form-group d-flex justify-content-center">
+                                <input type="button" (click)="deleteData()" readonly name="create" value="Delete" id="create_button" class="btn btn-primary col-md-4">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,13 +13,14 @@ export class GeneralServiceService {
   constructor(private http: HttpClient, private firestore: AngularFirestore) { }
 
   public updateDB(nombre, fecha, id){
-    console.log(nombre);
-    console.log(fecha);
-    console.log(id);
     return this.firestore.collection('actividades').doc(id).set({
       name: nombre,
       date: fecha
     });
+  }
+
+  public deleteDB(nombre, fecha, id){
+    return this.firestore.collection('actividades').doc(id).delete();
   }
 
   public getPrediction(date){
