@@ -53,7 +53,7 @@ export class DeleteComponent implements OnInit, CanComponentDeactivate {
   }
 
   public goBack(){
-    this._router.navigate(['/crud']);
+    this._router.navigate(['/read']);
   }
 
   public canDeactivate(){
