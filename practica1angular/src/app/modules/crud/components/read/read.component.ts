@@ -17,18 +17,10 @@ export class ReadComponent implements OnInit {
 
   
   public goUpdate(){
-    console.log("going to update");
-
-    let navigationExtras: NavigationExtras = {
-      queryParams: this.objRecogido,
-      fragment: 'anchor'
-    };
-
-    this.router.navigate(['/update'], navigationExtras);
+    this.router.navigate(['/update']);
   }
 
   public goDelete(){
-    console.log("going to delete");
     this.router.navigate(['/delete'])
   }
 
