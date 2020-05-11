@@ -1,0 +1,15 @@
+<table>
+    <tr>
+      <th>Actividad</th>
+      <th>Fecha</th>
+      <th>Prediccion</th>
+    </tr>
+    <tr>
+      <td>{actividad.nombre}</td>
+      <td>{actividad.fecha}</td>
+      <td>{actividad.prediccion}</td>
+      <td><button (click)="onSelect(actividad)">Edit</button></td>
+    </tr>
+  </table>
+  <app-update-actividad [actividad]="selectActividad"></app-update-actividad>
+  <router-outlet></router-outlet>

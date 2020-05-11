@@ -3,6 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './modules/login/components/login/login.component';
 import { LoginUsuarioGuard } from './core/guards/loginUsuario/login-usuario.guard';
 import { CrudComponent } from './modules/crud/components/crud/crud.component';
+/*Quiero añadir estos 2*/
+import { canActivateLogin } from './modules/crud/components/crud/crud.component';
+import { createActividades } from './modules/crud/components/crud/crud.component';
+
 
 
 const routes: Routes = [
