@@ -1,6 +1,6 @@
 export interface Actividad {
     id?: number;
     nombre: string;
-    fecha: string;
+    fecha: Date;
     prediccion: string;
 }

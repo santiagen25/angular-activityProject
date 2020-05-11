@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 
@@ -19,7 +19,7 @@ export class GeneralServiceService {
     });
   }
 
-  public deleteDB(nombre, fecha, id){
+  public deleteDB(id){
     return this.firestore.collection('actividades').doc(id).delete();
   }
 
@@ -28,9 +28,5 @@ export class GeneralServiceService {
     const m = date.substring(5,7);
     const d = date.substring(8,10);
     return this.http.get('https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/753692/'+y+'/'+m+'/'+d);
-  }
-
-  public getSvg(abreviation){
-    return this.http.get('https://cors-anywhere.herokuapp.com/https://www.metaweather.com/static/img/weather/'+abreviation+'.svg');
   }
 }

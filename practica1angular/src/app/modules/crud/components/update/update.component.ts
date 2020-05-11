@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { GeneralServiceService } from '../../services/general-service.service';
 import { CanComponentDeactivate } from '../../../../core/guards/confirm/confirm.guard';
 import Swal from 'sweetalert2';
@@ -20,7 +20,7 @@ export class UpdateComponent implements OnInit, CanComponentDeactivate {
   }
 
   public updateData(){
-    this.generalService.updateDB(this.obj.name, this.obj.date, this.obj.id);
+    this.generalService.updateDB(this.obj.name, new Date(this.obj.date), this.obj.id);
     this.name = this.obj.name;
     this.date = this.obj.date;
     Swal.fire({
