@@ -29,4 +29,8 @@ export class GeneralServiceService {
     const d = date.substring(8,10);
     return this.http.get('https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/753692/'+y+'/'+m+'/'+d);
   }
+
+  public getDataById(id){
+    return this.firestore.collection('actividades').doc(id).snapshotChanges();
+  }
 }
