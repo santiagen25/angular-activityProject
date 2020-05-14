@@ -1,0 +1,11 @@
+#delete .container #delete-row #delete-column #delete-box {
+    margin-top: 50px;
+    border: 1px solid #9c9c9c;
+    background-color: #ffffff;
+}
+#delete .container #delete-row #delete-column #delete-box #delete-form {
+    padding: 20px;
+}
+#delete .container #delete-row #delete-column #delete-box #delete-form #register-link {
+    margin-top: -85px;
+}
