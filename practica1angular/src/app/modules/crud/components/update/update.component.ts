@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { GeneralServiceService } from '../../services/general-service.service';
 import { CanComponentDeactivate } from '../../../../core/guards/confirm/confirm.guard';
 import Swal from 'sweetalert2';
+import { Actividad } from '../../../../shared/models/Actividad';
 
 @Component({
   selector: 'app-update',
@@ -10,13 +11,22 @@ import Swal from 'sweetalert2';
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent implements OnInit, CanComponentDeactivate {
+  @Input() obj1: Actividad;
+
   public obj = { id: "zmrzqximWuUqWBZNni4g", name: "Actividad1", date: "2020-05-12", prediction: "N/A", img: "https://images.vexels.com/media/users/3/139344/isolated/preview/04f2d79f761a2663177cb6ab3700a484-icono-cuadrado-cuadrado-redondeado-by-vexels.png" };
+  
+  //id = this.obj1.id;
+  //name = this.obj1.nombre;
+  //date = this.obj1.fecha;
+  //prediction = this.obj1.prediccion;
+  id = this.obj.id;
   name = this.obj.name;
   date = this.obj.date;
+  prediction = this.obj.prediction;
+
   constructor(private generalService: GeneralServiceService, private _router: Router) { }
 
   ngOnInit(): void {
-    //this.getData("zmrzqximWuUqWBZNni4g");
     this.getPrediction();
   }
 
@@ -62,15 +72,5 @@ export class UpdateComponent implements OnInit, CanComponentDeactivate {
       })
     }
     return true;
-  }
-
-  public getData(id) {
-    this.generalService.getDataById(id).subscribe((res) => {
-      this.obj.id = id;
-      this.obj.name = res.payload.data()['name'];
-      const date = new Date(res.payload.data()['date'].seconds);
-      console.log(date);
-      this.obj.date = date.toISOString().substring(0,10);
-    })
   }
 }

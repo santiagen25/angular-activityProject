@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { GeneralServiceService } from '../../services/general-service.service';
 import Swal from 'sweetalert2';
+import { Actividad } from '../../../../shared/models/Actividad';
 
 @Component({
   selector: 'app-delete',
@@ -9,9 +10,19 @@ import Swal from 'sweetalert2';
   styleUrls: ['./delete.component.css']
 })
 export class DeleteComponent implements OnInit {
+  @Input() obj1: Actividad;
+
   public obj = { id: "123456789", name: "Actividad1", date: "2020-04-23", prediction: "N/A", img: "https://images.vexels.com/media/users/3/139344/isolated/preview/04f2d79f761a2663177cb6ab3700a484-icono-cuadrado-cuadrado-redondeado-by-vexels.png" };
+  
+  //id = this.obj1.id;
+  //name = this.obj1.nombre;
+  //date = this.obj1.fecha;
+  //prediction = this.obj1.prediccion;
+  id = this.obj.id;
   name = this.obj.name;
   date = this.obj.date;
+  prediction = this.obj.prediction;
+  
   constructor(private generalService: GeneralServiceService, private _router: Router) { }
 
   ngOnInit(): void {
